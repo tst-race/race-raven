@@ -1,0 +1,55 @@
+{
+    "bootstrap": false,
+    "channelGid": "raven",
+    "connectionType": "CT_INDIRECT",
+    "creatorExpected": {
+      "send": {
+        "bandwidth_bps": 277200,
+        "latency_ms": 3190,
+        "loss": -1
+      },
+      "receive": {
+        "bandwidth_bps": 277200,
+        "latency_ms": 3190,
+        "loss": -1
+      }
+    },
+    "description": "RACECAR's Raven",
+    "duration_s": -1,
+    "linkDirection": "LD_LOADER_TO_CREATOR",
+    "loaderExpected": {
+      "send": {
+        "bandwidth_bps": 277200,
+        "latency_ms": 3190,
+        "loss": -1
+      },
+      "receive": {
+        "bandwidth_bps": 277200,
+        "latency_ms": 3190,
+        "loss": -1
+      }
+    },
+    "mtu": -1,
+    "multiAddressable": false,
+    "period_s": -1,
+    "reliable": false,
+    "isFlushable": false,
+    "sendType": "ST_STORED_ASYNC",
+    "supported_hints": [],
+    "transmissionType": "TT_UNICAST",
+    "maxLinks": 1000,
+    "creatorsPerLoader": -1,
+    "loadersPerCreator": -1,
+    "roles": [
+      {
+        "roleName": "default",
+        "mechanicalTags": [],
+        "behavioralTags": [],
+        "linkSide": "LS_BOTH"
+      }
+    ],
+    "maxSendsPerInterval": -1,
+    "secondsPerInterval": -1,
+    "intervalEndTime": 0,
+    "sendsRemainingInInterval": -1
+}

@@ -1,0 +1,5 @@
+TA2Plugin
+gopath
+*.so
+libPluginGolang.h
+_obj

@@ -1,0 +1,38 @@
+version: '2'
+
+networks:
+  rib-overlay-network:
+    external: true
+
+services:
+  mail:
+    build: .
+    hostname: racemail-raven.test
+    container_name: racemail-raven.test
+    networks:
+    - rib-overlay-network
+    environment:
+      # SSL_TYPE=letsencrypt
+      - PERMIT_DOCKER=network
+      - ONE_DIR=1
+      - DMS_DEBUG=1
+      - OVERRIDE_HOSTNAME=mail.racemail-raven.test
+      - SPOOF_PROTECTION=0
+      - REPORT_RECIPIENT=0
+      - ENABLE_SPAMASSASSIN=0
+      - ENABLE_CLAMAV=0
+      - ENABLE_FAIL2BAN=0
+      - ENABLE_POSTGREY=0
+      - ENABLE_AMAVIS=0
+      - ENABLE_QUOTAS=0
+    cap_add:
+      - NET_ADMIN
+      - SYS_PTRACE
+    restart: always
+    # MICAH: I ADDED THE PORTS BELOW (removed port 25 since that conflicts with host)
+    # MICAH TODO: figure out which of these we actually need
+    ports:
+      - "143:143"  # IMAP4 (explicit TLS => STARTTLS)
+      - "465:465"  # ESMTP (implicit TLS)
+      - "587:587"  # ESMTP (explicit TLS => STARTTLS)
+      - "993:993"  # IMAP4 (implicit TLS)
